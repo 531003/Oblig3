@@ -41,7 +41,7 @@ public abstract class Kort {
 		return kortnummer;
 	}
 
-	public boolean isSperretKort() {
+	public boolean isSperret() {
 		return sperretKort;
 	}
 	
