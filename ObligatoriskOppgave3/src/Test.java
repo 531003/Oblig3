@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
 public class Test {
 
@@ -6,7 +7,7 @@ public class Test {
         
         ArrayList<Kort> reg = new ArrayList<Kort>();
         
-        Kort k1 = new Ansatt("Ole", "Olsen", 1234);
+        Kort k1 = new Ansatt("Ole", "Olsen", 1234, new GregorianCalendar(2010, 4, 2), 634.64);
         Kort k2 = new Gjest("Mari", "Olsen");
         reg.add(k1);
         reg.add(k2);
@@ -17,5 +18,13 @@ public class Test {
             System.out.println("\nTest av kort: med kode 1234 er" + (kort.sjekkPin(1234) ?  " gyldig" :  " ugyldig" ) );
             System.out.println("\nTest av kort: med kode 9999 er" + (kort.sjekkPin(9999) ?  " gyldig" :  " ugyldig" ) );
         }
+        
+        Ansatt a1 = (Ansatt) k1;
+        
+        System.out.println(a1.beregnBonus());
+        System.out.println(a1.beregnKreditt());
+        
+        a1.setNavn("Marianne Dahl");
+        System.out.println(a1);
     }
 }
