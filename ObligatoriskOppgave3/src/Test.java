@@ -19,12 +19,13 @@ public class Test {
             System.out.println("\nTest av kort: med kode 9999 er" + (kort.sjekkPin(9999) ?  " gyldig" :  " ugyldig" ) );
         }
         
-        Ansatt a1 = (Ansatt) k1;
+        Ansatt a = (Ansatt) k1.clone();
         
-        System.out.println(a1.beregnBonus());
-        System.out.println(a1.beregnKreditt());
+        System.out.println("Er referansen den samme? " + (a == k1));
+        System.out.println("Er de like? " + a.compareTo(k1));
         
-        a1.setNavn("Marianne Dahl");
-        System.out.println(a1);
+        a.setNavn("Marianne Dahl");
+        System.out.println(a);
+        System.out.println(k1);
     }
 }
