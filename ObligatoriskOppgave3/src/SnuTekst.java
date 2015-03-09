@@ -38,4 +38,3 @@ public class SnuTekst {
 		return respons;
 	}
 }
-

@@ -14,19 +14,22 @@ public class TowerOfHanoi {
 		moveDicks(n, 'A', 'B', 'C');
 
 		System.out.printf("\nAntall tegn ble: %5d\n", cunt);
+		System.out.printf("\nAntall call til metoden ble: %5d\n", callCunt);
 	}
 
 	public static void moveDicks(int n, char fromTower, char toTower,
 			char auxTower) {
+		callCunt++;
+
 		if (n == 1) {
 			System.out.printf(
-					"Flytt skiven %2d fra %c til %c\n", cunt,
+					"Trekk nummer: %5d Flytt skiven %2d fra %c til %c\n", cunt,
 					n, fromTower, toTower);
 			cunt++;
 		} else {
 			moveDicks(n - 1, fromTower, auxTower, toTower);
 			System.out.printf(
-					"Flytt skiven %2d fra %c til %c\n", cunt,
+					"Trekk nummer: %5d Flytt skiven %2d fra %c til %c\n", cunt,
 					n, fromTower, toTower);
 			cunt++;
 			moveDicks(n - 1, auxTower, toTower, fromTower);
