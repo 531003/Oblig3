@@ -5,7 +5,7 @@ public class SnuTekst {
 	private static Scanner in = new Scanner(System.in);
 	
 	public static void main(String[] args) {
-		String userInput = validerString("Skriv inn en tekststreng for å inventere");
+		String userInput = validerString("Skriv inn en tekststreng");
 		
 		baklengs(userInput);
 	}

@@ -11,13 +11,13 @@ public class TowerOfHanoi {
 		int n = input.nextInt();
 
 		System.out.println("Trekkene er:");
-		moveDicks(n, 'A', 'B', 'C');
+		move(n, 'A', 'B', 'C');
 
 		System.out.printf("\nAntall tegn ble: %5d\n", count);
 		System.out.printf("\nAntall call til metoden ble: %5d\n", callCount);
 	}
 
-	public static void moveDicks(int n, char fromTower, char toTower,
+	public static void move(int n, char fromTower, char toTower,
 			char auxTower) {
 		callCount++;
 
@@ -27,12 +27,12 @@ public class TowerOfHanoi {
 					n, fromTower, toTower);
 			count++;
 		} else {
-			moveDicks(n - 1, fromTower, auxTower, toTower);
+			move(n - 1, fromTower, auxTower, toTower);
 			System.out.printf(
 					"Trekk nummer: %5d Flytt skiven %2d fra %c til %c\n", count,
 					n, fromTower, toTower);
 			count++;
-			moveDicks(n - 1, auxTower, toTower, fromTower);
+			move(n - 1, auxTower, toTower, fromTower);
 		}
 	}
 }
